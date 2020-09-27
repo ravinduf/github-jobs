@@ -1,7 +1,8 @@
-import React from 'react'
+import { useReducer } from 'react';
 
 const useFetchJobs = (params, page) => {
     
+    const [state, dispatch] = useReducer(reducer, { jobs: [], loading: true, })
     return {
         jobs: [],
         loading: true,
@@ -9,4 +10,4 @@ const useFetchJobs = (params, page) => {
     }
 }
 
-export default useFetchJobs
+export default useFetchJobs;
