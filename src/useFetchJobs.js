@@ -3,11 +3,22 @@ import { useReducer } from 'react';
 
 const  ACTIONS = {
     MAKE_REQUEST: 'make_request',
-    GER_DATA: 'get-data',
+    GET_DATA: 'get-data',
     ERROR: 'error'
 }
 
 function reducer(state, action) {
+    switch(ACTIONS.type) {
+        case ACTIONS.MAKE_REQUEST:
+
+        case ACTIONS.GET_DATA:
+
+        case ACTIONS.ERROR:
+
+        default:
+            return state
+
+    }
 
 }
 
