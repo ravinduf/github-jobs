@@ -7,10 +7,10 @@ const  ACTIONS = {
     ERROR: 'error'
 }
 
-const BASE_URL = "https://jobs.github.com/positions.json"
+const BASE_URL = "https://cors-anywhere.herokuapp.com/https://jobs.github.com/positions.json"
 
 function reducer(state, action) {
-    switch(ACTIONS.type) {
+    switch(action.type) {
         case ACTIONS.MAKE_REQUEST:
             return { loading: true, jobs: [] };
         case ACTIONS.GET_DATA:
@@ -29,8 +29,7 @@ const useFetchJobs = (params, page) => {
     const [state, dispatch] = useReducer(reducer, { jobs: [], loading: true, })
     
     useEffect(() => {
-        dispatch({ type: ACTIONS.MAKE_REQUEST });
-        
+        dispatch({ type: ACTIONS.MAKE_REQUEST })
         axios.get(BASE_URL, {
             params: { markdown: true, page: page, ...params }
         }).then(res => {
@@ -39,8 +38,10 @@ const useFetchJobs = (params, page) => {
             dispatch({ type: ACTIONS.ERROR, payload: { error: e }})
         });
 
-    }, [params, page]);
+    }, [page, params]);
 
+    
+    //console.log(state.jobs);
     return state;
 }
 
