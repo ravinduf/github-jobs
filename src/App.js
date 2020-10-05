@@ -29,6 +29,7 @@ function App() {
       <SearchForm params={params} onParamsChange={handleParamChange}/>
       <JobsPagination page={page} setPage={setPage} hasNextPage={hasNextPage}/>
       {loading && <h1>Loading</h1>}
+      {(jobs.length === 0 && !loading) && <h1>Sorry no jobs </h1>}
       {error && <h1>Error. Try Refreshing.</h1>}
       {jobs.map(job => (
         < Job key={job.id} job={job} />
