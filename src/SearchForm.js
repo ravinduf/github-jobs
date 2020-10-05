@@ -14,7 +14,7 @@ const SearchForm = ({ params, onParamsChange }) => {
 
                 <Form.Group as={Col} >
                     <Form.Label>Location</Form.Label>
-                    <Form.Control onChange={onParamChange} value={params.location}
+                    <Form.Control onChange={onParamsChange} value={params.location}
                     name="location" type="text" />
                 </Form.Group>
 
