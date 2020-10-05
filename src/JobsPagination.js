@@ -5,6 +5,8 @@ const JobsPagination = ( {page, setPage } ) => {
     return (
         <Pagination>
             <Pagination.Prev/>
+            <Pagination.Item>{page}</Pagination.Item>
+            <Pagination.Item>{page}</Pagination.Item>
             <Pagination.Next/>
         </Pagination>
 
