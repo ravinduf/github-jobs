@@ -1,7 +1,7 @@
 import React from 'react'
 import { Pagination } from 'react-bootstrap'
 
-const JobsPagination = ( {page, setPage } ) => {
+const JobsPagination = ( {page, setPage , hasNextPage } ) => {
     return (
         <Pagination>
             {page !== 1 && <Pagination.Prev/>}
@@ -9,8 +9,8 @@ const JobsPagination = ( {page, setPage } ) => {
             {page > 3 && <Pagination.Ellipsis />}
             {page !== 1 && <Pagination.Item>{page - 1}</Pagination.Item> }
             <Pagination.Item active>{page}</Pagination.Item>
-            <Pagination.Item>{page + 1}</Pagination.Item>
-            <Pagination.Next/>
+            {hasNextPage && <Pagination.Item>{page + 1}</Pagination.Item>}
+            {hasNextPage && <Pagination.Next/>}
         </Pagination>
 
     )
